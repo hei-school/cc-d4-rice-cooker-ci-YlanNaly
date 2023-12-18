@@ -1,30 +1,100 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/__xb4cFP)
 
-# Rice Cooker Algorithm
+# Rice Cooker TypeScript Project
 
-## Description:
-This repository contains an algorithm for a virtual representation of a rice cooker with various cooking functionalities. The algorithm is implemented in multiple programming languages (Python, JavaScript, Java, Ruby).
+This project implements a Rice Cooker program using TypeScript.
 
-## Installation:
-- To access the algorithm in a specific language, switch to the respective branch in this repository:
-    - [GOLANG branch](https://github.com/hei-school/cc-d4-rice-cooker-ci-YlanNaly/tree/feature/golang)
-    - [Typescript branch](https://github.com/hei-schoolcc-d4-rice-cooker-ci-YlanNaly/tree/feature/golang)
-    - [Scala branch](https://github.com/hei-school/cc-d4-rice-cooker-ci-YlanNaly/tree/feature/scala)
-    - [Kotlin branch](https://github.com/hei-school/cc-d4-rice-cooker-ci-YlanNaly/tree/feature/kotlin)
+## Prerequisites
 
-Clone the repository:
+Ensure you have Node.js installed on your machine.
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone <repository_url>
+
+   ```
+   Install dependencies:
+   ```bash
+    cd rice-cooker-ts
+    npm install
+    ```
+
+Setting Up TypeScript and Jest
+
+This project uses TypeScript for static typing and Jest for testing. Follow these steps to configure TypeScript and Jest:
+    Install TypeScript and Jest as dev dependencies:
+    ```
+npm install --save-dev typescript jest @types/jest ts-jest
+    ```
+Configure TypeScript:
+
+Create a tsconfig.json file in the root directory of your project:
+
 ```bash
-git clone https://github.com/your_username/rice-cooker-algorithm.git
+json
+
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
+```
+Configure Jest:
+
+Create a jest.config.js file in the root directory:
+
+javascript
+
+    module.exports = {
+      preset: 'ts-jest',
+      testEnvironment: 'node',
+    };
+
+Setting Up ESLint
+
+This project uses ESLint for linting. Follow these steps to configure ESLint with TypeScript:
+
+Install ESLint and necessary plugins:
+
+```
+npm install --save-dev eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser
+```
+Create an ESLint configuration file:
+
+Create a .eslintrc.json file in the root directory:
+
+```bash
+json
+
+    {
+      "env": {
+        "browser": true,
+        "es6": true
+      },
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "ecmaVersion": 2021,
+        "sourceType": "module"
+      },
+      "plugins": ["@typescript-eslint"],
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
+      ],
+      "rules": {
+      }
+    }
 ```
 
-## Features:
+Usage
 
-    Power control (on/off)
-    Selection of cooking functions (steaming, boiling, stewing, potting, simmering)
-    Starting cooking process
-    Keeping food warm functionality
-    Stopping warm function
-
-## Bugs:
-
-No known bugs at the moment.
+After setting up the project and configurations, you can run the tests or start the program by running appropriate npm scripts.
